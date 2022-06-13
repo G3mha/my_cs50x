@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        function ANSWER_HTML(is_correct, el) {
+            if (is_correct) {
+                document.getElementById(el).innerHTML = "Correct!"
+            }
+            else {
+                document.getElementById(el).innerHTML = "Incorrect"
+            }
+        }
+        function GET_ANSWER() {
+            var b1 = document.querySelectorAll(".button")
+            b1.forEach(function (b2) {
+                b2.classList.remove('red')
+                b2.classList.remove('green')
+            })
+            if (event.target.id == "green") {
+                event.target.classList.add('green')
+                ANSWER_HTML(true, "correct_answer_for_q1")
+            }
+            else {
+                event.target.classList.add('red')
+                ANSWER_HTML(false, "correct_answer_for_q1")
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var buttons = document.querySelectorAll(".button")
+            buttons.forEach(function (button) {
+                button.addEventListener("click", GET_ANSWER)
+            })
+            inputField = document.querySelector('input')
+            checkButton = document.querySelector("#check")
+            checkButton.addEventListener('click', function (evt) {
+                if (inputField.value.toLowerCase() == "batman") {
+                    ANSWER_HTML(true, "correct_answer_for_q2")
+                }
+                else {
+                    ANSWER_HTML(false, "correct_answer_for_q2")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>Who's the Flash?</h3>
+            <h2 id="correct_answer_for_q1"></h2>
+            <button class="button">Pikachu</button>
+            <button class="button">Neo</button>
+            <button class="button">Collector</button>
+            <button id="green" class="button">Barry Allen</button>
+            <button class="button">Paris Hilton</button>
+        </div>
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>Who's Bruce Wayne?</h3>
+            <h2 id="correct_answer_for_q2"></h2>
+            <input type="text">
+            <button id="check" class="input">Check Answer</button>
+        </div>
+    </div>
+</body>
+</html>

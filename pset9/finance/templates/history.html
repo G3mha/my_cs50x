@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Quote</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<tr>-->
+        {% for line in history %}
+        <tr>
+            <td>{{ line["Symbol"] }}</td>
+            <td>{{ line["Name"] }}</td>
+            <td>{{ line["Shares"] }}</td>
+            <td>{{ line["Quote"] }}</td>
+            <td>{{ line["Time"] }}</td>
+        </tr>
+        {% endfor %}
+        <!--</tr>-->
+    </tbody>
+</table>
+
+{% endblock %}

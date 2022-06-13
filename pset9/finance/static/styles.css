@@ -1,0 +1,38 @@
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+nav .navbar-brand .blue
+{
+    color: blue;
+}
+nav .navbar-brand .red
+{
+    color: red;
+}
+nav .navbar-brand .yellow
+{
+    color: yellow;
+}
+nav .navbar-brand .green
+{
+    color: green;
+}
+
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+main
+{
+    overflow-x: auto;
+    text-align: center;
+}
+
+main img
+{
+    max-width: 100%;
+}

@@ -1,0 +1,11 @@
+sort1 uses: bubble sort.
+
+How do you know?: Because sort1 performed much faster than selection sort on the data that was already sorted.
+
+sort2 uses: merge sort.
+
+How do you know?: Because sort2 performed much faster that others on the reversed data and, also, is very slow for larger sequences.
+
+sort3 uses: selection sort.
+
+How do you know?: Because sort3 performed with very close running time for random, reverse and sorted data, and being slower for larger sequences.

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account Overview
+{% endblock %}
+
+{% block main %}
+    <!--<table class="table table-striped table-center table-hover mx-auto ">-->
+        <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col" style="text-align:left">Symbol</th>
+            <th scope="col" style="text-align:left">Name</th>
+            <th scope="col" style="text-align:left">Shares</th>
+            <th scope="col" style="text-align:left">Price</th>
+
+            <th scope="col" style="text-align:left">Change</th>
+            <th scope="col" style="text-align:left">Change %</th>
+
+            <th scope="col" style="text-align:left">Equity</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--<tr>-->
+            {% for stock in stocks %}
+            <tr>
+                <td style="text-align:left">{{ stock["symbol"] }}</td>
+                <td style="text-align:left">{{ stock["name"] }}</td>
+                <td style="text-align:left">{{ stock["shares"] }}</td>
+                <td style="text-align:left">{{ stock["quote"] }}</td>
+
+                <td style="text-align:left">{{ stock["change"] }}</td>
+                <td style="text-align:left">{{ stock["changepc"] }}</td>
+
+                <td style="text-align:left">{{ stock["total"] }}</td>
+            </tr>
+            {% endfor %}
+            <!--</tr>-->
+        </tbody>
+    <!--</table>-->
+    <!--<br>-->
+    <!--<table class="table table-striped">-->
+        <thead>
+            <tr>
+            <th colspan=5></th>
+            <th colspan=2 style="text-align:right" scope="col">Account Overview</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan=5></td>
+                <td style="text-align:left">
+                    <button type="button" class="btn btn-light" style="width: 120px; text-align:left">Total Equity</button></td>
+                <td style="text-align:left">{{ equity }}</td>
+            </tr>
+            <tr>
+                <td colspan=5></td>
+                <td style="text-align:left">
+                    <button type="button" class="btn btn-light" style="width: 120px; text-align:left">Cash</button></td>
+                <td style="text-align:left">{{ balance }}</td>
+            </tr>
+            <tr>
+                <td colspan=5></td>
+                <td style="text-align:left">
+                    <button type="button" class="btn btn-light" style="width: 120px; text-align:left">Total Assets</button></td>
+                <td style="text-align:left">{{ assets }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+{% endblock %}
